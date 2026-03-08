@@ -1,0 +1,23 @@
+data:
+  # Set counts_path and metadata_path to use real data;
+  # leave blank to use the built-in simulator.
+  counts_path:    ""
+  metadata_path:  ""
+
+  # Simulation parameters (used when paths are empty)
+  n_samples:        24      # total samples
+  n_genes:        8000      # total genes in simulated matrix
+  effect_size:       2.5   # log2 fold-change for DE genes
+  dispersion_mean:   0.15  # mean NB dispersion
+  seed:             42
+
+de:
+  reference_level:  "Control"   # baseline condition
+  padj_threshold:    0.05
+  lfc_threshold:     1.0        # |log2FC| ≥ 1 → 2-fold change
+  min_count:        10          # filter: min counts per gene
+  min_samples:       4          # filter: in at least this many samples
+  n_cpus:            1
+
+output:
+  dir: "outputs"
