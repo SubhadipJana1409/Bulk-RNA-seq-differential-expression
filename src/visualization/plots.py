@@ -65,7 +65,7 @@ def fig1_sample_qc(
 
     # Library size
     ax = axes[0]
-    bars = ax.bar(range(len(lib_size)), lib_size.values, color=colors, edgecolor="white", linewidth=0.5)
+    ax.bar(range(len(lib_size)), lib_size.values, color=colors, edgecolor="white", linewidth=0.5)
     ax.set_xticks(range(len(lib_size)))
     ax.set_xticklabels(lib_size.index, rotation=90, fontsize=6)
     ax.set_ylabel("Library Size (millions)")
@@ -107,7 +107,7 @@ def fig2_pca(
     var_exp = pca.explained_variance_ratio_ * 100
 
     conditions = metadata.loc[vst_counts.columns, "condition"].values
-    colors = [PALETTE.get(c, "gray") for c in conditions]
+    _colors = [PALETTE.get(c, "gray") for c in conditions]  # noqa: F841
 
     fig, axes = plt.subplots(1, 2, figsize=(13, 5))
     fig.suptitle("PCA of VST-Normalised Counts", fontsize=14, fontweight="bold")
@@ -414,10 +414,10 @@ def fig9_de_summary(
     out_dir: Path,
     padj_thr: float = 0.05,
 ) -> None:
-    n_ctrl = (metadata["condition"] == "Control").sum()
-    n_ibd  = (metadata["condition"] == "IBD").sum()
+    _n_ctrl = (metadata["condition"] == "Control").sum()  # noqa: F841
+    _n_ibd  = (metadata["condition"] == "IBD").sum()  # noqa: F841
 
-    n_total    = len(results)
+    _n_total    = len(results)  # noqa: F841
     n_tested   = results["padj"].notna().sum()
     sig        = results[results["significant"]]
     n_up       = (sig["direction"] == "Up").sum()

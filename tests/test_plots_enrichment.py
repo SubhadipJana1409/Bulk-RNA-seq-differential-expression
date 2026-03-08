@@ -1,8 +1,6 @@
 """Tests for enrichment and visualization."""
-import numpy as np
 import pandas as pd
 import pytest
-from pathlib import Path
 from src.data.simulator import simulate_counts
 from src.models.deseq2 import DEAnalysis
 from src.models.enrichment import run_enrichment, GENE_SETS

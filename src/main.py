@@ -16,18 +16,17 @@ import sys
 import time
 from pathlib import Path
 
-import yaml
 
 # ── Bootstrap path ───────────────────────────────────────────────────────────
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from src.data.simulator    import load_or_simulate
-from src.models.deseq2     import DEAnalysis
-from src.models.enrichment import run_enrichment
-from src.visualization.plots import generate_all
-from src.utils.logger      import setup_logging
-from src.utils.config      import load_config
+from src.data.simulator    import load_or_simulate  # noqa: E402
+from src.models.deseq2     import DEAnalysis  # noqa: E402
+from src.models.enrichment import run_enrichment  # noqa: E402
+from src.visualization.plots import generate_all  # noqa: E402
+from src.utils.logger      import setup_logging  # noqa: E402
+from src.utils.config      import load_config  # noqa: E402
 
 logger = logging.getLogger(__name__)
 
@@ -72,7 +71,6 @@ def main() -> None:
     )
 
     vst_counts = de.vst_counts
-    norm_counts = de.normalized_counts
 
     # ── Step 3: Pathway enrichment ────────────────────────────────────────────
     logger.info("[3/6] Pathway enrichment …")

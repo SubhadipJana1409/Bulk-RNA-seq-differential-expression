@@ -17,7 +17,7 @@ import numpy as np
 import pandas as pd
 from pydeseq2.dds import DeseqDataSet
 from pydeseq2.ds import DeseqStats
-from scipy.stats import false_discovery_control
+
 
 logger = logging.getLogger(__name__)
 

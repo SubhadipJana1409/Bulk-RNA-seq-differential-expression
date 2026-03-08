@@ -7,10 +7,8 @@ For real datasets, swap in full MSigDB GMT files.
 from __future__ import annotations
 
 import logging
-from pathlib import Path
 from typing import Optional
 
-import numpy as np
 import pandas as pd
 from scipy.stats import fisher_exact
 from statsmodels.stats.multitest import multipletests

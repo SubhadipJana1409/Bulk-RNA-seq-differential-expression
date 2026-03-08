@@ -1,7 +1,6 @@
 """Tests for src/data/simulator.py"""
 import numpy as np
 import pandas as pd
-import pytest
 from src.data.simulator import simulate_counts, load_or_simulate, IBD_UP_GENES, IBD_DOWN_GENES
 
 

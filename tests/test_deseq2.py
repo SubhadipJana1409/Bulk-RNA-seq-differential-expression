@@ -1,6 +1,4 @@
 """Tests for src/models/deseq2.py"""
-import numpy as np
-import pandas as pd
 import pytest
 from src.data.simulator import simulate_counts
 from src.models.deseq2 import DEAnalysis
